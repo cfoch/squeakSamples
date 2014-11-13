@@ -1,0 +1,20 @@
+printFalling: b other: c
+	| a |
+	a := self.
+	(a > b)
+	ifTrue: [
+		(b > c)
+		ifTrue: [Transcript show: a printString, ' ', b printString, ' ', c printString; cr]
+		ifFalse: [
+			(a > c) ifFalse: [Transcript show: c printString, ' ', a printString, ' ', b printString; cr]
+			]
+		]
+	ifFalse: [
+		(a > c)
+		ifTrue: [Transcript show: b printString, ' ', a printString, ' ', c printString; cr]
+		ifFalse: [
+			(b>c)
+			ifTrue: [Transcript show: b printString, ' ', c printString, ' ', a printString; cr]
+			ifFalse: [Transcript show: c printString, ' ', b printString, ' ', a printString; cr]
+			]
+		]
